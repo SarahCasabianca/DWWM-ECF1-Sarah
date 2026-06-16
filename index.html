@@ -4,32 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/style.min.css" />
+    <link rel="stylesheet" href="assets/css/style.min.css" />
   </head>
   <body>
+    <div id="header"></div>
     <main>
-      <header>
-        <nav>
-          <ul>
-            <li>Accueil</li>
-            <li>Programmation</li>
-            <li>Infos pratiques</li>
-          </ul>
-        </nav>
-      </header>
-      <section class="hero">
-        <h2>SALLE DE SPECTACLE</h2>
-        <h1>Vibrez. Partagez. Émerveillez-vous.</h1>
-        <h2>Théâtre, stand-up, concerts : une programmation vivante au cœur de la ville.</h2>
-        <a href="#"><button>Voir la programmation</button></a>
-      </section>
-      <section class="featured-shows">
-        <h3>À l'affiche</h3>
-        <span>Trois spectacles à ne pas manquer cette semaine</span>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
+      <div class="accueil">
+        <section class="accueil__hero">
+          <div class="accueil__hero__content">
+            <span>LE PHOSPHORE</span>
+            <h1>
+              Vibrez. Partagez. <br />
+              Émerveillez-vous.
+            </h1>
+            <p>Théâtre, stand-up, concerts : une programmation vivante au cœur de la ville.</p>
+            <a href="pages/programmation.html" class="accueil__hero__cta">Voir la programmation</a>
+          </div>
+        </section>
+        <section class="accueil__featured-shows">
+          <div class="accueil__featured-shows__text">
+            <h3>À l'affiche</h3>
+            <span>Trois spectacles à ne pas manquer cette semaine</span>
+          </div>
+
+          <!-- js cards -->
+          <div></div>
+        </section>
+      </div>
+      <div id="footer"></div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -128,13 +128,62 @@ table {
   border-spacing: 0;
 }
 
+/*  en cours de test : 
+
+@mixin card($direction, $alignement) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.card {
+  @include card(row);
+}
+ */
+
+@font-face {
+  font-family: 'source-sans';
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'source-sans-light';
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Light.ttf);
+}
+
+@font-face {
+  font-family: 'source-sans-bold';
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'playfair-display-bold';
+  src: url(/assets/fonts/Playfair-Display/PlayfairDisplay-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'playfair-display-semibold';
+  src: url(/assets/fonts/Playfair-Display/PlayfairDisplay-SemiBold.ttf);
+}
+
 html {
   background-color: #2a2d34;
   color: #f5f0e8;
   font-size: 87.5%;
+  font-family: 'source-sans';
   @media (min-width: 768px) {
     font-size: 100%;
   }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header,
+#footer {
+  margin: 0;
+  padding: 0;
 }
 
 .components {
@@ -143,12 +192,16 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
+    padding: 50px 0 50px 0;
     &__logos {
       display: flex;
       flex-direction: row;
       gap: 15px;
       height: 2rem;
       & img {
+        height: 100%;
+        width: auto;
         filter: brightness(0) invert(1);
       }
     }
@@ -156,9 +209,126 @@ html {
       padding: 16px 16px;
     }
   }
+  &__header {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px;
+    border-bottom: solid 0.3px #f5f0e8;
+    background-color: #2a2d34;
+    & img {
+      height: 5rem;
+      width: auto;
+    }
+    &__navbar {
+      display: none;
+    }
+    &__burger {
+      margin-left: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      & img {
+        filter: brightness(0) saturate(100%) invert(68%) sepia(60%) saturate(500%) hue-rotate(5deg)
+          brightness(95%);
+      }
+    }
+  }
 }
 
-@media (min-width: 768px) {
+.accueil {
+  font-size: 1.5rem;
+  &__hero {
+    min-height: 100vh;
+    background-image: url('/assets/img/scene-principale.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      max-width: 30rem;
+    }
+    &__cta {
+      background-color: #d4a843;
+      width: 10.5rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      color: #2a2d34;
+      font-size: 1.5rem;
+      &:hover {
+        background-color: #6b1d3a;
+        color: #f5f0e8;
+        scale: 1.1;
+        transition: 200ms;
+      }
+    }
+    & span {
+      font-size: 2rem;
+      font-family: 'source-sans-light';
+      color: #d4a843;
+    }
+    & h1 {
+      font-size: 3rem;
+      font-family: 'playfair-display-bold';
+    }
+  }
+  &__featured-shows {
+    padding: 40px 16px;
+    &__text {
+      font-family: 'source-sans-light';
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      & h3 {
+        font-family: 'playfair-display-semibold';
+      }
+    }
+  }
+}
+
+.programmation {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    & h1 {
+      font-size: 2rem;
+      font-family: 'playfair-display-bold';
+    }
+  }
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3rem;
+    & a {
+      border: solid 0.3px #f5f0e8;
+      border-radius: 14px;
+      padding: 8px 12px;
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+  &__body {
+    padding: 40px 16px;
+  }
+}
+
+@media (min-width: 1024px) {
   .components {
     &__footer {
       display: flex;
@@ -166,5 +336,42 @@ html {
       justify-content: space-between;
       padding: 34px 24px 34px 24px;
     }
+    &__header {
+      padding: 8px 84px 8px 84px;
+      &__navbar {
+        display: flex;
+        gap: 96px;
+        font-size: 1.25rem;
+      }
+      &__burger {
+        display: none;
+      }
+    }
   }
+  .accueil {
+    &__hero {
+      &__content {
+        max-width: 50rem;
+      }
+    }
+    &__featured-shows {
+      padding: 80px;
+    }
+  }
+  .programmation {
+    &__body {
+      padding: 80px;
+    }
+    &__filters {
+      display: flex;
+
+      gap: 3rem;
+    }
+  }
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
