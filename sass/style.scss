@@ -251,6 +251,34 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    &__overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 3;
+    }
+    &__curtain {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      top: 0; // manquait
+      left: 0;
+      object-fit: cover;
+      &__left {
+        width: 100%;
+      }
+      &__right {
+        width: 100%;
+        display: none;
+      }
+    }
     &__content {
       display: flex;
       flex-direction: column;
@@ -321,10 +349,111 @@ a {
       display: flex;
       flex-direction: column;
       gap: 3rem;
+      &__left,
+      &__right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        & p {
+          width: 100%;
+        }
+      }
     }
   }
   &__body {
     padding: 40px 16px;
+  }
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+.infos {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 40px;
+    & h1 {
+      font-size: 2rem;
+      font-family: 'playfair-display-bold';
+    }
+  }
+  &__body {
+    padding: 40px 16px;
+  }
+  &__card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &__top {
+      display: flex;
+      flex-direction: column; // empilé sur mobile
+      gap: 1rem;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column; // empilé sur mobile
+      gap: 1rem;
+    }
+    &__card {
+      border: solid 0.3px #f5f0e8;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      &__access {
+        border: solid 0.3px #f5f0e8;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        & h2 {
+          font-family: 'source-sans-bold';
+          font-size: 1rem;
+        }
+      }
+      &__tarif {
+        border: solid 0.3px #f5f0e8;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        &--individual {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: solid 0.3px #f5f0e8;
+          padding-bottom: 1rem;
+          & span {
+            color: #d4a843;
+            font-family: 'source-sans-bold';
+          }
+        }
+        & h2 {
+          font-family: 'source-sans-bold';
+          font-size: 1rem;
+        }
+      }
+      & img {
+        width: 3rem;
+        height: 3rem;
+      }
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        & h2 {
+          font-family: 'source-sans-bold';
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
 
@@ -353,6 +482,25 @@ a {
       &__content {
         max-width: 50rem;
       }
+      &__curtain {
+        position: absolute;
+        z-index: 4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        top: 0; // manquait
+        left: 0;
+        object-fit: cover;
+        &__left {
+          width: 100%;
+        }
+        &__right {
+          width: 100%;
+          display: block;
+        }
+      }
     }
     &__featured-shows {
       padding: 80px;
@@ -364,9 +512,67 @@ a {
     }
     &__filters {
       display: flex;
-
+      flex-direction: row;
       gap: 3rem;
+      &__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        &__left {
+          border-right: solid 0.3px #f5f0e8;
+          padding-right: 2rem;
+        }
+      }
     }
+    &__checkbox {
+      padding-top: 2rem;
+    }
+  }
+  .infos {
+    &__body {
+      padding: 80px;
+    }
+    &__card-section {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      &__top {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+      }
+      &__bottom {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+      }
+      &__card {
+        flex: 1;
+        flex-direction: column; // icône au dessus du texte sur desktop
+        align-items: flex-start;
+      }
+    }
+    .infos__card-section__card__access {
+      flex: 2; // 2x plus large
+    }
+
+    .infos__card-section__card__tarif {
+      flex: 1;
+    }
+  }
+}
+
+#soldout {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: solid 0.3px #f5f0e8;
+  border-radius: 3px;
+  background-color: #2a2d34;
+  cursor: pointer;
+
+  &:checked {
+    background-color: #d4a843;
   }
 }
 

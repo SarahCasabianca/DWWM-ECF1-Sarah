@@ -4,51 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infos pratiques</title>
+    <link rel="stylesheet" href="/assets/css/style.min.css" />
   </head>
-  <body>
-    <!-- Tittle section -->
-    <section aria-label="Titres">
-      <h1>Infos pratiques</h1>
-      <p>Services, accès, tarifs et plan de salle.</p>
-    </section>
+  <body class="infos">
+    <div id="header"></div>
+    <div class="infos__body">
+      <!-- Tittle section -->
+      <section class="infos__text" aria-label="Titres">
+        <h1>Infos pratiques</h1>
+        <p>Services, accès, tarifs et plan de salle.</p>
+      </section>
 
-    <!-- Infos -->
-    <section aria-label="Infos">
-      <div>
-        <h2>Bar & restauration</h2>
-        <p>Bar ouvert avant le spectacle et à l'entracte. Petite restauration sur place.</p>
-      </div>
-      <div>
-        <h2>Vestiaire</h2>
-        <p>Vestiaire gratuit disponible à l'entrée pour manteaux et sacs.</p>
-      </div>
-      <div>
-        <h2>Accessibilité PMR</h2>
-        <p>Emplacements réservés, accès sans escalier, sanitaires adapatés.</p>
-      </div>
-      <div>
-        <h2>Accès</h2>
-        <p>12 rue des Artistes, 13000 Marseille — Métro ligne 1, arrêt Théâtre.</p>
-      </div>
-      <div>
-        <h2>Tarifs</h2>
-        <div>
-          <p>Plein tarif</p>
-          <span>25 €</span>
+      <!-- Infos -->
+      <section class="infos__card-section" aria-label="Infos">
+        <div class="infos__card-section__top">
+          <div class="infos__card-section__card">
+            <img src="/assets/img/bar.webp" alt="" />
+            <div class="infos__card-section__card__text">
+              <h2>Bar & restauration</h2>
+              <p>Bar ouvert avant le spectacle et à l'entracte. Petite restauration sur place.</p>
+            </div>
+          </div>
+          <div class="infos__card-section__card">
+            <img src="/assets/img/vestiaire.webp" alt="" />
+            <div class="infos__card-section__card__text">
+              <h2>Vestiaire</h2>
+              <p>Vestiaire gratuit disponible à l'entrée pour manteaux et sacs.</p>
+            </div>
+          </div>
+          <div class="infos__card-section__card">
+            <img src="/assets/img/PMR.webp" alt="" />
+            <div class="infos__card-section__card__text">
+              <h2>Accessibilité PMR</h2>
+              <p>Emplacements réservés, accès sans escalier, sanitaires adapatés.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>Tarif réduit</p>
-          <span>18 €</span>
+        <div class="infos__card-section__bottom">
+          <div class="infos__card-section__card__access">
+            <h2>Accès</h2>
+            <p>12 rue des Artistes, 13000 Marseille — Métro ligne 1, arrêt Théâtre.</p>
+          </div>
+          <div class="infos__card-section__card__tarif">
+            <h2>Tarifs</h2>
+            <div class="infos__card-section__card__tarif--individual">
+              <p>Plein tarif</p>
+              <span>25 €</span>
+            </div>
+            <div class="infos__card-section__card__tarif--individual">
+              <p>Tarif réduit</p>
+              <span>18 €</span>
+            </div>
+            <div class="infos__card-section__card__tarif--individual">
+              <p>Étudiant / -18 ans</p>
+              <span>15 €</span>
+            </div>
+            <div class="infos__card-section__card__tarif--individual">
+              <p>Groupe (10+)</p>
+              <span>12 €</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>Étudiant / -18 ans</p>
-          <span>15 €</span>
-        </div>
-        <div>
-          <p>Groupe (10+)</p>
-          <span>12 €</span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="/assets/js/script.js"></script>
   </body>
 </html>
