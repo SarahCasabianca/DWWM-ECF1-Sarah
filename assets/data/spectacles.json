@@ -72,16 +72,16 @@
     },
     {
       "id": 6,
-      "titre": "Ahmed Music - Jazz Manouche",
+      "titre": "MohAhmed Music - Jazz Manouche",
       "type": "concert",
-      "description": "Ahmed Music et son quartet invitent à un voyage musical entre Django Reinhardt et compositions originales. Guitares, violon et contrebasse pour une soirée swing.",
+      "description": "MohAhmed Music et son quartet invitent à un voyage musical entre Django Reinhardt et compositions originales. Guitares, violon et contrebasse pour une soirée swing.",
       "date": "2026-06-22",
       "horaire": "20:30",
       "duree": "1h45",
       "prix": 22,
       "places_total": 120,
       "places_vendues": 45,
-      "artiste": "Ahmed Music Quartet",
+      "artiste": "MohAhmed Music Quartet",
       "image": "/assets/img/ahmed-music-jazz-manouche.webp"
     },
     {
@@ -96,7 +96,7 @@
       "places_total": 120,
       "places_vendues": 78,
       "artiste": "Nora Music",
-      "image": "/assets/img/nora-music-electro-pop-live.webp"
+      "image": "/assets/img/nora-music-chanson-francaise.webp"
     },
     {
       "id": 8,

@@ -1,12 +1,12 @@
+// Jquery //
 $(document).ready(function () {
   $('#footer').load('/pages/footer.html');
   $('#header').load('/pages/navbar.html', function () {
-    // Open burger menu
+    // Open burger menu //
     const burger = document.querySelector('.components__header__burger');
     const nav = document.querySelector('.components__header__navbar');
 
     burger.addEventListener('click', function () {
-      console.log('clic détecté !');
       nav.classList.toggle('is-open');
       burger.classList.toggle('is-open');
     });
@@ -56,28 +56,190 @@ if (document.querySelector('.accueil__hero__curtain__left')) {
     });
 }
 
+// Cards featured home
+const featuredContainer = document.querySelector('#featured-cards');
+
+if (featuredContainer) {
+  fetch('/assets/data/spectacles.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const featured = data.spectacles
+        .filter(function (s) {
+          return s.places_vendues < s.places_total;
+        })
+        .slice(0, 3);
+
+      featured.forEach(function (spectacle) {
+        const card = document.createElement('div');
+        card.classList.add('programmation__card');
+
+        const image = document.createElement('img');
+        image.src = spectacle.image;
+        image.classList.add('programmation__card__image');
+
+        const titre = document.createElement('h2');
+        titre.textContent = spectacle.titre;
+        titre.classList.add('programmation__card__titre');
+
+        const div = document.createElement('div');
+        div.classList.add('programmation__card__meta');
+
+        const type = document.createElement('p');
+        type.textContent = spectacle.type;
+        type.classList.add('programmation__card__type');
+
+        const date = document.createElement('p');
+        date.textContent = spectacle.date;
+        date.classList.add('programmation__card__date');
+
+        div.appendChild(type);
+        div.appendChild(date);
+        card.appendChild(image);
+        card.appendChild(titre);
+        card.appendChild(div);
+
+        featuredContainer.appendChild(card);
+      });
+    });
+}
+
 // Cards dynamiques //
 fetch('/assets/data/spectacles.json')
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     const cards = document.querySelector('.programmation__cards');
+
     data.spectacles.forEach(function (spectacle) {
-      console.log(spectacle.titre);
-      console.log(spectacle.type);
-      cards.innerHTML += `
-        <div class="card">
-    <h2>${spectacle.titre}</h2>
-    <p>${spectacle.type}</p> · <p>${spectacle.date}</p>
-    <p>${spectacle.description}</p>
-    <p>${spectacle.horaire}</p>
-    <p>${spectacle.duree}</p>
-     <p>${spectacle.prix}</p>
-     <p>${spectacle.artiste}</p>
-      <p>${spectacle.image}</p>
-  </div>
-      `;
+      const card = document.createElement('div');
+      card.classList.add('programmation__card');
+      card.dataset.type = spectacle.type;
+      card.dataset.date = spectacle.date;
+
+      const image = document.createElement('img');
+      image.src = spectacle.image;
+      image.classList.add('programmation__card__image');
+
+      const titre = document.createElement('h2');
+      titre.textContent = spectacle.titre;
+      titre.classList.add('programmation__card__titre');
+
+      const div = document.createElement('div');
+      div.classList.add('programmation__card__meta');
+
+      const type = document.createElement('p');
+      type.textContent = spectacle.type;
+      type.classList.add('programmation__card__type');
+
+      const date = document.createElement('p');
+      date.textContent = spectacle.date;
+      date.classList.add('programmation__card__date');
+
+      const button = document.createElement('button');
+      button.textContent = 'En savoir +';
+      button.classList.add('programmation__card__button');
+
+      const divButton = document.createElement('div');
+      divButton.classList.add('programmation__card__details');
+
+      const prix = document.createElement('p');
+      prix.textContent = spectacle.prix + ' €';
+      prix.classList.add('programmation__card__prix');
+
+      const metaRow = document.createElement('div');
+      metaRow.classList.add('programmation__card__details__meta');
+
+      const horaire = document.createElement('p');
+      horaire.innerHTML = '🕐 ' + spectacle.horaire;
+      horaire.classList.add('programmation__card__horaire');
+
+      const duree = document.createElement('p');
+      duree.innerHTML = '⏱ ' + spectacle.duree;
+      duree.classList.add('programmation__card__duree');
+
+      const artiste = document.createElement('p');
+      artiste.innerHTML = '🎭 ' + spectacle.artiste;
+      artiste.classList.add('programmation__card__artiste');
+
+      const description = document.createElement('p');
+      description.textContent = spectacle.description;
+      description.classList.add('programmation__card__description');
+
+      // Construction de la card
+      div.appendChild(type);
+      div.appendChild(date);
+
+      metaRow.appendChild(horaire);
+      metaRow.appendChild(duree);
+      metaRow.appendChild(artiste);
+
+      divButton.appendChild(prix);
+      divButton.appendChild(metaRow);
+      divButton.appendChild(description);
+
+      card.appendChild(image);
+      card.appendChild(titre);
+      card.appendChild(div);
+      card.appendChild(button);
+      card.appendChild(divButton);
+
+      if (spectacle.places_vendues === spectacle.places_total) {
+        card.dataset.complet = 'true';
+      }
+
+      cards.appendChild(card);
+
+      // Toggle
+      button.addEventListener('click', function (event) {
+        event.stopPropagation();
+        divButton.classList.toggle('is-open');
+      });
+    });
+
+    // Filtres type
+    const allCards = document.querySelectorAll('.programmation__card');
+    const typeButtons = document.querySelectorAll('[data-type]');
+    const dateButtons = document.querySelectorAll('[data-date]');
+
+    typeButtons.forEach(function (bouton) {
+      bouton.addEventListener('click', function () {
+        typeButtons.forEach(function (b) {
+          b.classList.remove('active');
+        });
+        bouton.classList.add('active');
+        const valeur = bouton.dataset.type;
+        allCards.forEach(function (card) {
+          card.style.display = valeur === 'all' || card.dataset.type === valeur ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Filtres date
+    dateButtons.forEach(function (bouton) {
+      bouton.addEventListener('click', function () {
+        dateButtons.forEach(function (b) {
+          b.classList.remove('active');
+        });
+        bouton.classList.add('active');
+        const valeur = bouton.dataset.date;
+        allCards.forEach(function (card) {
+          card.style.display = valeur === 'all' || card.dataset.date === valeur ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Checkbox sold out
+    const checkbox = document.querySelector('#soldout');
+    checkbox.addEventListener('change', function () {
+      allCards.forEach(function (card) {
+        if (checkbox.checked && card.dataset.complet === 'true') {
+          card.style.display = 'none';
+        } else {
+          card.style.display = 'block';
+        }
+      });
     });
   });
