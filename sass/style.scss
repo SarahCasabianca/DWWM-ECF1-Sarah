@@ -151,27 +151,27 @@ $primary: #6b1d3a;
 
 @font-face {
   font-family: 'source-sans';
-  src: url(assets/fonts/Source-Sans-3/SourceSans3-Regular.ttf);
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Regular.ttf);
 }
 
 @font-face {
   font-family: 'source-sans-light';
-  src: url(assets/fonts/Source-Sans-3/SourceSans3-Light.ttf);
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Light.ttf);
 }
 
 @font-face {
   font-family: 'source-sans-bold';
-  src: url(assets/fonts/Source-Sans-3/SourceSans3-Bold.ttf);
+  src: url(/assets/fonts/Source-Sans-3/SourceSans3-Bold.ttf);
 }
 
 @font-face {
   font-family: 'playfair-display-bold';
-  src: url(assets/fonts/Playfair-Display/PlayfairDisplay-Bold.ttf);
+  src: url(/assets/fonts/Playfair-Display/PlayfairDisplay-Bold.ttf);
 }
 
 @font-face {
   font-family: 'playfair-display-semibold';
-  src: url(assets/fonts/Playfair-Display/PlayfairDisplay-SemiBold.ttf);
+  src: url(/assets/fonts/Playfair-Display/PlayfairDisplay-SemiBold.ttf);
 }
 
 // Base
@@ -278,6 +278,14 @@ a {
       transition: transform 0.5s ease;
       backdrop-filter: blur(10px);
 
+      & a {
+        color: #f5f0e8;
+        transition: color 0.2s ease;
+        &:hover {
+          color: #d4a843;
+        }
+      }
+
       &.is-open {
         transform: translateY(0);
       }
@@ -319,7 +327,7 @@ a {
 
   &__hero {
     min-height: 100vh;
-    background-image: url('assets/img/scene-principale.webp');
+    background-image: url('/assets/img/scene-principale.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -408,8 +416,9 @@ a {
       flex-direction: column;
       gap: 10px;
 
-      & h3 {
+      & h2 {
         font-family: 'playfair-display-semibold';
+        font-size: 2rem;
       }
     }
     #featured-cards {
@@ -487,6 +496,7 @@ a {
       border-radius: 14px;
       padding: 8px 12px;
       background-color: #f5f0e8;
+      cursor: pointer;
     }
 
     &__buttons {
@@ -499,6 +509,10 @@ a {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
+
+        & h2 {
+          width: 100%;
+        }
 
         & p {
           width: 100%;
@@ -718,6 +732,10 @@ a {
       }
 
       &__access {
+        h2 {
+          font-family: 'source-sans-bold';
+          font-size: 1.2rem;
+        }
         img {
           height: 25rem;
           width: 100%;
@@ -727,6 +745,10 @@ a {
       }
 
       &__tarif {
+        h2 {
+          font-family: 'source-sans-bold';
+          font-size: 1.2rem;
+        }
         &--individual {
           display: flex;
           justify-content: space-between;
@@ -747,7 +769,7 @@ a {
 
         h2 {
           font-family: 'source-sans-bold';
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
       }
     }

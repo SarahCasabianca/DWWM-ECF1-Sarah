@@ -1,7 +1,7 @@
 // Jquery //
 $(document).ready(function () {
-  $('#footer').load('/pages/footer.html');
-  $('#header').load('/pages/navbar.html', function () {
+  $('#footer').load('../pages/footer.html');
+  $('#header').load('../pages/navbar.html', function () {
     // Open burger menu //
     const burger = document.querySelector('.components__header__burger');
     const nav = document.querySelector('.components__header__navbar');
@@ -90,7 +90,7 @@ function createProgressBar(spectacle) {
 const featuredContainer = document.querySelector('#featured-cards');
 
 if (featuredContainer) {
-  fetch('assets/data/spectacles.json')
+  fetch('../assets/data/spectacles.json')
     .then(function (response) {
       return response.json();
     })
@@ -141,7 +141,7 @@ if (featuredContainer) {
 const cardsContainer = document.querySelector('.programmation__cards');
 
 if (cardsContainer) {
-  fetch('assets/data/spectacles.json')
+  fetch('../assets/data/spectacles.json')
     .then(function (response) {
       return response.json();
     })
