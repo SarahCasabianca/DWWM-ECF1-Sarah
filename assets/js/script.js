@@ -73,6 +73,13 @@ function createProgressBar(spectacle) {
   progressLabel.textContent = spectacle.places_vendues + ' / ' + spectacle.places_total + ' places';
   progressLabel.classList.add('programmation__card__progress__label');
 
+  if (spectacle.places_vendues === spectacle.places_total) {
+    progressLabel.textContent = 'Complet';
+  } else {
+    progressLabel.textContent =
+      spectacle.places_vendues + ' / ' + spectacle.places_total + ' places';
+  }
+
   progressContainer.appendChild(progressBar);
   progressContainer.appendChild(progressLabel);
 
