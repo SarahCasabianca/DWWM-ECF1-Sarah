@@ -90,7 +90,7 @@ function createProgressBar(spectacle) {
 const featuredContainer = document.querySelector('#featured-cards');
 
 if (featuredContainer) {
-  fetch('/assets/data/spectacles.json')
+  fetch('assets/data/spectacles.json')
     .then(function (response) {
       return response.json();
     })
@@ -141,7 +141,7 @@ if (featuredContainer) {
 const cardsContainer = document.querySelector('.programmation__cards');
 
 if (cardsContainer) {
-  fetch('/assets/data/spectacles.json')
+  fetch('assets/data/spectacles.json')
     .then(function (response) {
       return response.json();
     })
