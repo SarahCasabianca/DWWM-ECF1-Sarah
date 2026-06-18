@@ -12,7 +12,8 @@
       "places_total": 120,
       "places_vendues": 87,
       "artiste": "Cie Les Éclaireurs",
-      "image": "/assets/img/cyrano.webp"
+      "image": "/assets/img/cyrano.webp",
+      "alt": "acteurs sur scène jouant la pièce cyrano de bergerac"
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
       "places_total": 120,
       "places_vendues": 120,
       "artiste": "Marina Music",
-      "image": "/assets/img/marina-music.webp"
+      "image": "/assets/img/marina-music.webp",
+      "alt": "chanteuse sur scène"
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
       "places_total": 120,
       "places_vendues": 63,
       "artiste": "Paul Music",
-      "image": "/assets/img/paul-music.webp"
+      "image": "/assets/img/paul-music.webp",
+      "alt": "chanteur rock sur scène avec musiciens derrière"
     },
     {
       "id": 4,
@@ -54,7 +57,8 @@
       "places_total": 120,
       "places_vendues": 112,
       "artiste": "Fadily Camara",
-      "image": "/assets/img/fadily-camara.webp"
+      "image": "/assets/img/fadily-camara.webp",
+      "alt": "femme humoriste sur scène"
     },
     {
       "id": 5,
@@ -68,7 +72,8 @@
       "places_total": 120,
       "places_vendues": 120,
       "artiste": "Cie du Passage",
-      "image": "/assets/img/en-attendant-godot.webp"
+      "image": "/assets/img/en-attendant-godot.webp",
+      "alt": "rideau rouge sur une scène de théatre avec des silhouettes humaines en ombre derrière"
     },
     {
       "id": 6,
@@ -82,7 +87,8 @@
       "places_total": 120,
       "places_vendues": 45,
       "artiste": "MohAhmed Music Quartet",
-      "image": "/assets/img/ahmed-music-jazz-manouche.webp"
+      "image": "/assets/img/ahmed-music-jazz-manouche.webp",
+      "alt": "photo d'un guitariste avec gros plan sur ses mains et sa guitare"
     },
     {
       "id": 7,
@@ -96,7 +102,8 @@
       "places_total": 120,
       "places_vendues": 78,
       "artiste": "Nora Music",
-      "image": "/assets/img/nora-music-chanson-francaise.webp"
+      "image": "/assets/img/nora-music-chanson-francaise.webp",
+      "alt": "groupe de musiciens sur scène, un homme et une femme en premier plan, avec des musiciens derrière"
     },
     {
       "id": 8,
@@ -110,7 +117,8 @@
       "places_total": 120,
       "places_vendues": 98,
       "artiste": "Jamel Comedy Club",
-      "image": "/assets/img/jamel-comedy-club.webp"
+      "image": "/assets/img/jamel-comedy-club.webp",
+      "alt": "photo d'une scène de stand-up éclairée en rouge"
     }
   ]
 }

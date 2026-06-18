@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infos pratiques</title>
+    <title>Accès, tarifs et plan de salle | Le Phosphore</title>
     <link rel="stylesheet" href="/assets/css/style.min.css" />
   </head>
+
   <body class="infos">
+    <!-- Insert header -->
     <div id="header"></div>
+
     <div class="infos__body">
       <!-- Tittle section -->
       <section class="infos__text" aria-label="Titres">
@@ -15,8 +18,8 @@
         <p>Services, accès, tarifs et plan de salle.</p>
       </section>
 
-      <!-- Infos -->
-      <section class="infos__card-section" aria-label="Infos">
+      <!-- Informations -->
+      <section class="infos__card-section" aria-label="Informations pratiques">
         <div class="infos__card-section__top">
           <div class="infos__card-section__card">
             <img src="/assets/img/bar.webp" alt="" />
@@ -25,6 +28,7 @@
               <p>Bar ouvert avant le spectacle et à l'entracte. Petite restauration sur place.</p>
             </div>
           </div>
+
           <div class="infos__card-section__card">
             <img src="/assets/img/vestiaire.webp" alt="" />
             <div class="infos__card-section__card__text">
@@ -32,46 +36,70 @@
               <p>Vestiaire gratuit disponible à l'entrée pour manteaux et sacs.</p>
             </div>
           </div>
+
           <div class="infos__card-section__card">
             <img src="/assets/img/PMR.webp" alt="" />
             <div class="infos__card-section__card__text">
               <h2>Accessibilité PMR</h2>
-              <p>Emplacements réservés, accès sans escalier, sanitaires adapatés.</p>
+              <p>Emplacements réservés, accès sans escalier, sanitaires adaptés.</p>
             </div>
           </div>
         </div>
+
         <div class="infos__card-section__bottom">
           <div class="infos__card-section__card__access">
             <h2>Accès</h2>
+
+            <img src="/assets/img/map.webp" alt="Carte d'accès à la salle Le Phosphore" />
+
             <p>12 rue des Artistes, 13000 Marseille — Métro ligne 1, arrêt Théâtre.</p>
           </div>
+
           <div class="infos__card-section__card__tarif">
             <h2>Tarifs</h2>
+
             <div class="infos__card-section__card__tarif--individual">
               <p>Plein tarif</p>
               <span>25 €</span>
             </div>
+
             <div class="infos__card-section__card__tarif--individual">
               <p>Tarif réduit</p>
               <span>18 €</span>
             </div>
+
             <div class="infos__card-section__card__tarif--individual">
               <p>Étudiant / -18 ans</p>
               <span>15 €</span>
             </div>
+
             <div class="infos__card-section__card__tarif--individual">
               <p>Groupe (10+)</p>
               <span>12 €</span>
             </div>
           </div>
         </div>
+
         <div class="infos__card-section__plan">
           <h2>Plan de salle</h2>
-          <img src="/assets/img/plan-scene.png" alt="Plan de salle" />
+
+          <div class="tooltip-container">
+            <img
+              src="/assets/img/plan-scene.png"
+              alt="Plan de salle du Phosphore"
+              tabindex="0"
+              aria-describedby="tooltip-balcon"
+            />
+
+            <span id="tooltip-balcon" role="tooltip" class="tooltip"> 120 places balcon </span>
+          </div>
         </div>
       </section>
     </div>
+
+    <!-- Insert footer -->
     <div id="footer"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>

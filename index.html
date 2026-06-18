@@ -3,18 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le Phosphore | Théâtre, concerts et stand-up à Marseille</title>
     <link rel="stylesheet" href="assets/css/style.min.css" />
   </head>
   <body>
+    <!-- Insert header -->
     <div id="header"></div>
     <main>
+      <!-- Hero with curtain animation -->
       <div class="accueil">
         <section class="accueil__hero">
           <div class="accueil__hero__overlay" aria-hidden="true"></div>
           <div class="accueil__hero__curtain">
-            <img class="accueil__hero__curtain__left" src="/assets/img/rideau-gauche.webp" alt="" />
-            <img class="accueil__hero__curtain__right" src="/assets/img/rideau-droit.webp" alt="" />
+            <img
+              class="accueil__hero__curtain__left"
+              src="/assets/img/rideau-gauche.webp"
+              alt="image d'une moitié de rideau rouge"
+            />
+            <img
+              class="accueil__hero__curtain__right"
+              src="/assets/img/rideau-droit.webp"
+              alt="image d'une moitié de rideau rouge"
+            />
           </div>
           <div class="accueil__hero__content">
             <span>LE PHOSPHORE</span>
@@ -26,19 +36,24 @@
             <a href="pages/programmation.html" class="accueil__hero__cta">Voir la programmation</a>
           </div>
         </section>
+
+        <!-- Featured shows -->
         <section class="accueil__featured-shows">
           <div class="accueil__featured-shows__text">
             <h3>À l'affiche</h3>
             <span>Trois spectacles à ne pas manquer cette semaine</span>
           </div>
 
-          <!-- js cards -->
+          <!-- Js cards -->
           <div class="accueil__featured-shows__cards" id="featured-cards"></div>
         </section>
       </div>
+
+      <!-- Insert footer -->
       <div id="footer"></div>
     </main>
-    <!-- JavaScript dependencies -->
+
+    <!-- Js dependencies -->
     <!-- GSAP library -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
